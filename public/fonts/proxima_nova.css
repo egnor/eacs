@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 100 200;
+  src: url("ProximaNova/ProximaNova-Thin.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 300;
+  src: url("ProximaNova/ProximaNova-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 400;
+  src: url("ProximaNova/ProximaNova-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 500;
+  src: url("ProximaNova/ProximaNova-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 600;
+  src: url("ProximaNova/ProximaNova-SemiBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 700;
+  src: url("ProximaNova/ProximaNova-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 800;
+  src: url("ProximaNova/ProximaNova-ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 900;
+  src: url("ProximaNova/ProximaNova-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 100 200; font-style: italic;
+  src: url("ProximaNova/ProximaNova-ThinItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 300; font-style: italic;
+  src: url("ProximaNova/ProximaNova-LightItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 400; font-style: italic;
+  src: url("ProximaNova/ProximaNova-RegularItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 500; font-style: italic;
+  src: url("ProximaNova/ProximaNova-MediumItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 600; font-style: italic;
+  src: url("ProximaNova/ProximaNova-SemiBoldItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 700; font-style: italic;
+  src: url("ProximaNova/ProximaNova-BoldItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 800; font-style: italic;
+  src: url("ProximaNova/ProximaNova-ExtraBoldItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova"; font-weight: 900; font-style: italic;
+  src: url("ProximaNova/ProximaNova-BlackItalic.otf") format("opentype");
+}

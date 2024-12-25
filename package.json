@@ -1,0 +1,8 @@
+{
+  "name": "eacs_website",
+  "version": "0.0",
+  "type": "module",
+  "dependencies": {
+    "astro": "^5.1.1"
+  }
+}

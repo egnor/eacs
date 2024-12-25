@@ -1,0 +1,24 @@
+# Generic, system, text editors
+*~
+\#*\#
+_autosave-*
+/build/
+.DS_Store
+.~lock.*
+.*.swp
+*.bak
+*.tmp
+*.old
+*_old
+.vscode/
+.idea/
+
+# Python
+*.egg-info
+*.pyc
+__pycache__/
+python_venv/
+
+# Node, webpack, etc.
+node_modules/
+webpack_dist/

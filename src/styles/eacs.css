@@ -1,0 +1,42 @@
+@import url("proxima_nova.css");
+@import url("recoleta.css");
+
+body {
+  font-family: Proxima Nova, Calibri, sans-serif;
+  font-size: 18px;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 900px;
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0.5em 0 0.25em 0; }
+p, ol, ul { margin: 0.25em 0; }
+
+a { text-decoration: none; }
+
+table { border-collapse: collapse; border-style: hidden; }
+table td, table th { padding: 0 0.2em; }
+table td:first-child, table th:first-child { margin-left: 0; padding-left: 0; }
+
+.eacs_onepage {
+  align-content: center;
+  height: 100%;
+}
+
+.eacs_logo {
+  color: #686;
+  font-family: Recoleta, serif;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 1em;
+  margin-bottom: 0.25em;
+  text-align: center;
+}
+
+.eacs_logo_caption {
+  color: #999;
+  font-size: 48px;
+  font-style: italic;
+  font-weight: 700;
+  text-align: center;
+}

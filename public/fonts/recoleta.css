@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "Recoleta";
+  font-weight: 100 200;
+  src:
+    local("Recoleta"),
+    url("Recoleta Complete Family/Latinotype - Recoleta Thin.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Recoleta";
+  font-weight: 300;
+  src:
+    local("Recoleta"),
+    url("Recoleta Complete Family/Latinotype - Recoleta Light.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Recoleta";
+  font-weight: 400;
+  src:
+    local("Recoleta"),
+    url("Recoleta Complete Family/Latinotype - Recoleta Regular.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Recoleta";
+  font-weight: 500;
+  src:
+    local("Recoleta"),
+    url("Recoleta Complete Family/Latinotype - Recoleta Medium.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Recoleta";
+  font-weight: 600;
+  src:
+    local("Recoleta"),
+    url("Recoleta Complete Family/Latinotype - Recoleta SemiBold.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Recoleta";
+  font-weight: 700;
+  src:
+    local("Recoleta"),
+    url("Recoleta Complete Family/Latinotype - Recoleta Bold.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Recoleta";
+  font-weight: 800 900;
+  src:
+    local("Recoleta"),
+    url("Recoleta Complete Family/Latinotype - Recoleta Black.otf")
+    format("opentype");
+}

@@ -1,0 +1,12 @@
+[tools]
+node = "22"
+
+[settings]
+experimental = true
+
+[tasks.setup]
+run = [
+  "git lfs install --local",
+  "git lfs pull",
+  "mise install",
+]
