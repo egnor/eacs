@@ -1,5 +1,5 @@
-@import url("proxima_nova.css");
-@import url("recoleta.css");
+@import url("/fonts/proxima_nova.css");
+@import url("/fonts/recoleta.css");
 
 body {
   font-family: Proxima Nova, Calibri, sans-serif;
@@ -18,9 +18,9 @@ table { border-collapse: collapse; border-style: hidden; }
 table td, table th { padding: 0 0.2em; }
 table td:first-child, table th:first-child { margin-left: 0; padding-left: 0; }
 
-.eacs_onepage {
+body.eacs_onepage {
   align-content: center;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .eacs_logo {

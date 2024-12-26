@@ -15,6 +15,6 @@ run = [
 [tasks.publish]
 run = [
   "mise run setup",
-  "mise exec -- npx astro build",
+  "mise exec -- npx vite build",
   "rsync -a --del --info=progress2 -f'P /hiorbit' dist.tmp/ eacs.io:www-eacs/",
 ]

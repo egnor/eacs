@@ -13,12 +13,6 @@ _autosave-*
 .vscode/
 .idea/
 
-# Python
-*.egg-info
-*.pyc
-__pycache__/
-python_venv/
-
-# Node, webpack, etc.
+# Astro, Node, Vite, etc
+.astro/
 node_modules/
-webpack_dist/
