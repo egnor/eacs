@@ -18,7 +18,7 @@ table { border-collapse: collapse; border-style: hidden; }
 table td, table th { padding: 0 0.2em; }
 table td:first-child, table th:first-child { margin-left: 0; padding-left: 0; }
 
-body.eacs_onepage {
+body.eacs_onepage, div.eacs_splash {
   align-content: center;
   min-height: 100vh;
 }
