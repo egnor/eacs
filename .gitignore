@@ -13,6 +13,5 @@ _autosave-*
 .vscode/
 .idea/
 
-# Astro, Node, Vite, etc
-.astro/
+# Node, next.js, etc
 node_modules/
