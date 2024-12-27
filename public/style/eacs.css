@@ -9,7 +9,7 @@ body {
   max-width: 900px;
 }
 
-h1, h2, h3, h4, h5, h6 { margin: 0.5em 0 0.25em 0; }
+h1, h2, h3, h4, h5, h6 { margin: 0.75em 0 0.5em 0; }
 p, ol, ul { margin: 0.25em 0; }
 
 a { text-decoration: none; }

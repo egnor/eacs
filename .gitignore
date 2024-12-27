@@ -14,4 +14,5 @@ _autosave-*
 .idea/
 
 # Node, next.js, etc
+.next/
 node_modules/
