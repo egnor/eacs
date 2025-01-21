@@ -14,7 +14,7 @@ const isWatch = process.env.ROLLUP_WATCH === "true";
 const configs = fg.sync("*.mdx").map((input) => ({
   input,
   jsx: { mode: "automatic", jsxImportSource: "jsx-dom" },
-  output: { dir: "build.tmp", format: "es" },
+  output: { dir: "build.tmp", format: "iife" },
   plugins: [
     rollupAutomountDOM(),
     rollupHTML({ fileName: input.replace(/mdx$/, "html"), title: "" }),
