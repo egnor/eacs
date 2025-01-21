@@ -3,6 +3,7 @@
   "type": "module",
   "dependencies": {
     "@mdx-js/rollup": "^3.1.0",
+    "@rollup/plugin-html": "^1.1.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-url": "^8.0.2",
@@ -10,6 +11,7 @@
     "fast-glob": "^3.3.3",
     "jsx-dom": "^8.1.6",
     "rollup": "^4.30.0",
+    "rollup-plugin-automount-dom": "^1.0.0",
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-delete": "^2.1.0",
     "rollup-plugin-dev": "^2.0.5"
