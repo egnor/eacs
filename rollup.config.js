@@ -3,11 +3,11 @@ import rollupAutomountDOM from "rollup-plugin-automount-dom";
 import rollupCopy from "rollup-plugin-copy";
 import rollupDelete from "rollup-plugin-delete";
 import rollupDev from "rollup-plugin-dev";
-import rollupHTML from "@rollup/plugin-html";
-import rollupMDX from "@mdx-js/rollup";
+import rollupHtml from "@rollup/plugin-html";
+import rollupJsxIfFor from "rollup-plugin-jsx-if-for";
+import rollupMdx from "@mdx-js/rollup";
 import { nodeResolve as rollupNodeResolve } from "@rollup/plugin-node-resolve";
 import rollupTerser from "@rollup/plugin-terser";
-import rollupURL from "@rollup/plugin-url";
 
 const isWatch = process.env.ROLLUP_WATCH === "true";
 
@@ -16,12 +16,14 @@ const configs = fg.sync("*.mdx").map((input) => ({
   jsx: { mode: "automatic", jsxImportSource: "jsx-dom" },
   output: { dir: "build.tmp", format: "iife" },
   plugins: [
-    rollupAutomountDOM(),
-    rollupHTML({ fileName: input.replace(/mdx$/, "html"), title: "" }),
-    rollupMDX({ jsxImportSource: "jsx-dom" }),
+    rollupMdx({ jsxImportSource: "jsx-dom" }),
     rollupNodeResolve(),
+
+    rollupJsxIfFor(),
+
+    rollupAutomountDOM(),
     !isWatch && rollupTerser(),
-    rollupURL({ fileName: "assets/[name]-[hash][extname]" }),
+    rollupHtml({ fileName: input.replace(/mdx$/, "html"), title: "" }),
   ],
 }));
 
