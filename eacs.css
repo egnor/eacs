@@ -1,5 +1,5 @@
-@import url("/fonts/proxima_nova.css");
-@import url("/fonts/recoleta.css");
+@import url("fonts/proxima_nova.css");
+@import url("fonts/recoleta.css");
 
 body {
   font-family: Proxima Nova, Calibri, sans-serif;

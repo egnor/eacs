@@ -1,18 +1,13 @@
 {
   "name": "eacs_website",
+  "version": "0.1",
   "type": "module",
   "dependencies": {
-    "@mdx-js/rollup": "^3.1.0",
-    "@rollup/plugin-html": "^2.0.0",
-    "@rollup/plugin-node-resolve": "^16.0.0",
-    "@rollup/plugin-terser": "^0.4.4",
+    "@craftamap/esbuild-plugin-html": "^0.8.0",
+    "@mdx-js/esbuild": "^3.1.0",
+    "del": "^8.0.0",
+    "esbuild": "^0.25.0",
     "fast-glob": "^3.3.3",
-    "jsx-dom": "^8.1.6",
-    "rollup": "^4.30.0",
-    "rollup-plugin-automount-dom": "^1.0.0",
-    "rollup-plugin-copy": "^3.5.0",
-    "rollup-plugin-delete": "^2.1.0",
-    "rollup-plugin-dev": "^2.0.5",
-    "rollup-plugin-jsx-if-for": "^1.2.0"
+    "jsx-dom": "^8.1.6"
   }
 }
