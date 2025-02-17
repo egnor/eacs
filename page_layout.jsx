@@ -1,5 +1,8 @@
 import Content, * as contentExports from "wrapped-module";
 
+import "./eacs.css";
+import "sanitize.css";
+
 document.title = Object(contentExports)["title"] || "";
 document.head.appendChild(<link rel="stylesheet" href="style/eacs.css" />);
 document.body.appendChild(<Content />);

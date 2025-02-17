@@ -19,6 +19,7 @@ const pages = await fg(["*.mdx"]);
 const htmlFiles = pages.map(p => ({
   entryPoints: { includes(v) { return v.endsWith(p); } },
   filename: p.replace(/\.mdx$/, ".html"),
+  inline: true,
 }));
 
 const context = await esbuild.context({
