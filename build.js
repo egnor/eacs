@@ -36,7 +36,7 @@ const context = await esbuild.context({
   outdir,
   plugins: [
     esbuildAddWrapper({
-      filter: /.*\.mdx/, loader: "jsx", wrapper: "./page_layout.jsx"
+      filter: /.*\.mdx/, loader: "jsx", wrapper: "./page_wrapper.jsx"
     }),
     esbuildMdx({ jsxImportSource: "jsx-dom" }),
     esbuildHtml({ files: htmlFiles }),
