@@ -2,7 +2,7 @@
 import { Command } from "commander";
 import { deleteAsync } from "del";
 import esbuild from "esbuild";
-import esbuildAddWrapper from "./esbuild_plugin_add_wrapper.js";
+import esbuildAddWrapper from "esbuild-plugin-add-wrapper";
 import esbuildMdx from "@mdx-js/esbuild";
 import { htmlPlugin as esbuildHtml } from "@craftamap/esbuild-plugin-html";
 import fg from "fast-glob";
