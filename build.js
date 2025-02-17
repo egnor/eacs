@@ -23,7 +23,7 @@ const htmlFiles = pages.map(p => ({
 
 const context = await esbuild.context({
   bundle: true,
-  define: { "window.ESBUILD_LIVE_RELOAD": JSON.stringify(opts.serve) },
+  define: { "window.ESBUILD_LIVE_RELOAD": JSON.stringify(opts.serve || false) },
   entryPoints: [...pages, { in: "eacs.css", out: "style/eacs" }],
   format: "iife",
   jsxImportSource: "jsx-dom",
