@@ -5,6 +5,7 @@
   "dependencies": {
     "@craftamap/esbuild-plugin-html": "^0.8.0",
     "@mdx-js/esbuild": "^3.1.0",
+    "commander": "^13.1.0",
     "del": "^8.0.0",
     "esbuild": "^0.25.0",
     "fast-glob": "^3.3.3",

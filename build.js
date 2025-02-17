@@ -1,47 +1,52 @@
 #!/usr/bin/env -S node --no-deprecation
-
-import path from "node:path";
-
+import { Command } from "commander";
 import { deleteAsync } from "del";
 import esbuild from "esbuild";
+import esbuildAddWrapper from "./esbuild_plugin_add_wrapper.js";
 import esbuildMdx from "@mdx-js/esbuild";
 import { htmlPlugin as esbuildHtml } from "@craftamap/esbuild-plugin-html";
 import fg from "fast-glob";
+import path from "node:path";
+
+const opts = new Command()
+  .option("--debug", "Add debug logging")
+  .option("--no-minify", "Do not minify Javascript")
+  .option("--serve", "Run dev server")
+  .parse().opts();
 
 const outdir = "build.tmp";
-const pageLayoutSource = "page_layout.jsx";
-const pageSources = await fg(["*.mdx"]);
+const pages = await fg(["*.mdx"]);
+const htmlFiles = pages.map(p => ({
+  entryPoints: { includes(v) { return v.endsWith(p); } },
+  filename: p.replace(/\.mdx$/, ".html"),
+}));
 
-await deleteAsync("build.tmp");
+const context = await esbuild.context({
+  bundle: true,
+  define: { "window.ESBUILD_LIVE_RELOAD": JSON.stringify(opts.serve) },
+  entryPoints: [...pages, { in: "eacs.css", out: "style/eacs" }],
+  format: "iife",
+  jsxImportSource: "jsx-dom",
+  jsx: "automatic",
+  loader: { ".otf": "copy" },
+  logLevel: opts.debug ? "debug" : "info",
+  metafile: true,
+  minify: opts.minify,
+  outdir,
+  plugins: [
+    esbuildAddWrapper({
+      filter: /.*\.mdx/, loader: "jsx", wrapper: "./page_layout.jsx"
+    }),
+    esbuildMdx({ jsxImportSource: "jsx-dom" }),
+    esbuildHtml({ files: htmlFiles }),
+  ],
+});
 
-await Promise.all([
-  esbuild.build({
-    entryPoints: [{ in: "eacs.css", out: "style/eacs" }],
-    bundle: true,
-    loader: { ".otf": "copy" },
-    outdir,
-  }),
-
-  ...pageSources.map((page) => {
-    const outbase = path.format({ ...path.parse(page), base: "", ext: "" });
-    return esbuild.build({
-      entryPoints: [{ in: pageLayoutSource, out: outbase }],
-      bundle: true,
-      format: "iife",
-      alias: { content: `./${page}` },
-      jsxImportSource: "jsx-dom",
-      jsx: "automatic",
-      metafile: true,
-      outdir,
-      plugins: [
-        esbuildMdx({ jsxImportSource: "jsx-dom" }),
-        esbuildHtml({
-          files: [{
-            entryPoints: [pageLayoutSource],
-            filename: `${outbase}.html`,
-          }],
-        }),
-      ],
-    });
-  })
-]);
+await deleteAsync(outdir);
+if (opts.serve) {
+  await context.watch();
+  await context.serve({ host: "localhost", servedir: outdir });
+} else {
+  const result = await context.rebuild();
+  context.dispose();
+}
