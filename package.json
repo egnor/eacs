@@ -8,7 +8,7 @@
     "commander": "^13.1.0",
     "del": "^8.0.0",
     "esbuild": "^0.25.0",
-    "esbuild-plugin-add-wrapper": "^1.0.1",
+    "esbuild-plugin-add-wrapper": "^1.0.3",
     "fast-glob": "^3.3.3",
     "jsx-dom": "^8.1.6",
     "sanitize.css": "^13.0.0"
