@@ -7,7 +7,7 @@ document.title = Object(contentExports)["title"] || "";
 document.head.appendChild(<link rel="stylesheet" href="style/eacs.css" />);
 document.body.appendChild(<Content />);
 
-if (window.ESBUILD_LIVE_RELOAD) {
+if (window.ESBUILD_LIVE) {
   const source = new EventSource("/esbuild");
   source.addEventListener("change", () => location.reload());
 }

@@ -8,13 +8,12 @@ experimental = true
 run = [
   "git lfs install --local",
   "git lfs pull",
-  "mise install",
   "mise exec -- npm install",
 ]
 
 [tasks.publish]
+depends = ["setup"]
 run = [
-  "mise run setup",
-  "mise exec -- ./build.js",
+  "./build.js",
   "rsync -a --del --info=progress2 -f'P /hiorbit' build.tmp/ eacs.io:www-eacs/",
 ]

@@ -6,6 +6,7 @@ import esbuildAddWrapper from "esbuild-plugin-add-wrapper";
 import esbuildMdx from "@mdx-js/esbuild";
 import { htmlPlugin as esbuildHtml } from "@craftamap/esbuild-plugin-html";
 import fg from "fast-glob";
+import recmaJsxIfFor from "./recma_jsx_if_for.js";
 import path from "node:path";
 
 const opts = new Command()
@@ -24,7 +25,7 @@ const htmlFiles = pages.map(p => ({
 
 const context = await esbuild.context({
   bundle: true,
-  define: { "window.ESBUILD_LIVE_RELOAD": JSON.stringify(opts.serve || false) },
+  define: { "window.ESBUILD_LIVE": JSON.stringify(opts.serve || false) },
   entryPoints: [...pages, { in: "eacs.css", out: "style/eacs" }],
   format: "iife",
   jsxImportSource: "jsx-dom",
@@ -38,7 +39,9 @@ const context = await esbuild.context({
     esbuildAddWrapper({
       filter: /\.mdx/, loader: "jsx", wrapper: "./page_wrapper.jsx"
     }),
-    esbuildMdx({ jsxImportSource: "jsx-dom" }),
+    esbuildMdx({
+      jsx: true, jsxImportSource: "jsx-dom", recmaPlugins: [recmaJsxIfFor]
+    }),
     esbuildHtml({ files: htmlFiles }),
   ],
 });
