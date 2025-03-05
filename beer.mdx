@@ -1,6 +1,6 @@
-<$let var="countdown" value={[...Array(100).keys()].reverse()}>
-  <$for var="n" of={countdown}>
-    <$if test={n > 0} foo="bar">
+<$let var={countdown} value={[...Array(100).keys()].reverse()}>
+  <$for var={n} of={countdown}>
+    <$if test={n > 0}>
       ## {n} bottles of beer on the wall, {n} bottles of beer
       Take one down and pass it around,
       <$if test={n > 1}>{n - 1}</$if> <$if test={n <= 1}>no more</$if>
