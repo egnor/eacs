@@ -6,7 +6,7 @@ import esbuildAddWrapper from "esbuild-plugin-add-wrapper";
 import esbuildMdx from "@mdx-js/esbuild";
 import { htmlPlugin as esbuildHtml } from "@craftamap/esbuild-plugin-html";
 import fg from "fast-glob";
-import recmaJsxIfFor from "./recma_jsx_if_for.js";
+import recmaJsxIfFor from "recma-plugin-jsx-if-for";
 import path from "node:path";
 
 const opts = new Command()
