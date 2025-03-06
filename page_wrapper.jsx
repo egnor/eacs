@@ -3,7 +3,7 @@ import Content, * as contentExports from "wrapped-module";
 import "./eacs.css";
 import "sanitize.css";
 
-if (window.ESBUILD_LIVE) {
+if (ESBUILD_LIVE) {
   const source = new EventSource("/esbuild");
   source.addEventListener("change", () => location.reload());
 }

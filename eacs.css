@@ -13,7 +13,7 @@ body {
 h1, h2, h3, h4, h5, h6 { margin: 0.75em 0 0.5em 0; }
 p, ol, ul { margin: 0.25em 0; }
 
-a { text-decoration: none; }
+a:any-link { text-decoration: none; }
 
 table { border-collapse: collapse; border-style: hidden; }
 table td, table th { padding: 0 0.2em; }

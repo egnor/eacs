@@ -8,7 +8,9 @@ import esbuildMdx from "@mdx-js/esbuild";
 import { htmlPlugin as esbuildHtml } from "@craftamap/esbuild-plugin-html";
 import fg from "fast-glob";
 import recmaJsxIfFor from "recma-plugin-jsx-if-for";
-import path from "node:path";
+import process from "node:process";
+
+process.chdir(import.meta.dirname);
 
 const opts = new Command()
   .option("--debug", "Add debug logging")
@@ -16,19 +18,14 @@ const opts = new Command()
   .option("--serve", "Run dev server")
   .parse().opts();
 
-const outdir = "build.tmp";
 const pages = await fg(["*.mdx"]);
-const htmlFiles = pages.map(p => ({
-  entryPoints: { includes(v) { return v.endsWith(p); } },
-  filename: p.replace(/\.mdx$/, ".html"),
-  inline: true,
-}));
+const outdir = "build.tmp";
 
 const context = await esbuild.context({
+  absWorkingDir: process.cwd(),
   bundle: true,
-  define: { "window.ESBUILD_LIVE": JSON.stringify(opts.serve || false) },
+  define: { ESBUILD_LIVE: JSON.stringify(opts.serve || false) },
   entryPoints: [...pages, { in: "eacs.css", out: "style/eacs" }],
-  format: "iife",
   jsxImportSource: "jsx-dom",
   jsx: "automatic",
   loader: { ".otf": "copy" },
@@ -43,11 +40,18 @@ const context = await esbuild.context({
     esbuildMdx({
       jsx: true, jsxImportSource: "jsx-dom", recmaPlugins: [recmaJsxIfFor]
     }),
-    esbuildHtml({ files: htmlFiles }),
+    esbuildHtml({
+      files: pages.map(p => ({
+        entryPoints: { includes(v) { return v.endsWith(p); } },
+        filename: p.replace(/\.mdx$/, ".html"),
+        inline: true,
+      })),
+    }),
   ],
 });
 
 await deleteAsync(outdir);
+
 if (opts.serve) {
   await context.watch();
   await context.serve({ host: "localhost", servedir: outdir });
