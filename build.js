@@ -1,4 +1,5 @@
 #!/usr/bin/env -S node --no-deprecation
+
 import { Command } from "commander";
 import { deleteAsync } from "del";
 import esbuild from "esbuild";

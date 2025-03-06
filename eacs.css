@@ -4,9 +4,10 @@
 body {
   font-family: Proxima Nova, Calibri, sans-serif;
   font-size: 18px;
+  line-height: 1.25;
   margin: 0 auto;
-  padding: 0 20px;
   max-width: 900px;
+  padding: 0 20px;
 }
 
 h1, h2, h3, h4, h5, h6 { margin: 0.75em 0 0.5em 0; }
