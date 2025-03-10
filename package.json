@@ -11,7 +11,7 @@
     "esbuild-plugin-add-wrapper": "^1.0.3",
     "fast-glob": "^3.3.3",
     "jsx-dom": "^8.1.6",
-    "recma-plugin-jsx-if-for": "^1.0.0",
+    "recma-jsx-if-for": "^1.0.0",
     "sanitize.css": "^13.0.0"
   }
 }
