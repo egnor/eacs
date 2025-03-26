@@ -11,9 +11,9 @@ run = [
   "mise exec -- npm install",
 ]
 
-[tasks.publish]
+[tasks.deploy]
 depends = ["setup"]
 run = [
-  "./build.js",
+  "./build.js --minify",
   "rsync -a --del --info=progress2 -f'P /hiorbit' build.tmp/ eacs.io:www-eacs/",
 ]

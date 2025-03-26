@@ -3,8 +3,8 @@ import Content, * as contentExports from "wrapped-module";
 import "./eacs.css";
 import "sanitize.css";
 
-if (ESBUILD_LIVE) {
-  const source = new EventSource("/esbuild");
+if (CHANGE_EVENT_URL) {
+  const source = new EventSource(CHANGE_EVENT_URL);
   source.addEventListener("change", () => location.reload());
 }
 
